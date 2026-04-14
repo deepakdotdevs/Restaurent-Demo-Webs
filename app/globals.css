@@ -1666,6 +1666,106 @@ footer {
   }
 }
 
+@media (max-width: 768px) {
+  .booking-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .booking-form-wrap {
+    display: block;
+    padding: 24px;
+  }
+
+  .booking-info-side {
+    padding: 0;
+  }
+
+  .info-list {
+    gap: 14px;
+  }
+
+  .info-item {
+    padding: 16px;
+  }
+
+  .info-text h4 {
+    font-size: 0.875rem;
+  }
+
+  .info-text p {
+    font-size: 0.825rem;
+    line-height: 1.6;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+
+  .form-group {
+    margin-bottom: 16px;
+  }
+
+  .booking-form-wrap {
+    border-radius: 20px;
+  }
+
+  .hero-title {
+    font-size: clamp(var(--text-4xl), 10vw, var(--text-7xl));
+  }
+
+  .hero-subtitle,
+  .section-sub,
+  .review-text,
+  .contact-value,
+  .hour-row {
+    font-size: 0.95rem;
+  }
+
+  .nav-logo,
+  .nav-links a,
+  .mobile-menu a {
+    font-size: 0.95rem;
+  }
+
+  .hero-actions {
+    gap: 0.75rem;
+  }
+
+  .gallery-grid,
+  .arrivals-grid,
+  .menu-grid,
+  .features-grid,
+  .hours-grid,
+  .footer-grid,
+  .location-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .map-wrapper {
+    aspect-ratio: auto;
+    min-height: 320px;
+  }
+
+  .social-link,
+  .counter-btn,
+  .btn-gold {
+    min-height: 44px;
+  }
+
+  .section-tag {
+    gap: 0.5rem;
+  }
+
+  .section-title {
+    font-size: clamp(var(--text-3xl), 8vw, var(--text-5xl));
+  }
+
+  .footer-grid {
+    gap: 2rem;
+  }
+}
+
 /* Additional responsive adjustments */
 @media (max-width: 480px) {
   section {
