@@ -25,21 +25,23 @@ function EnquiryCard({ c }: { c: typeof cards[0] }) {
       ref={ref}
       className="enquiry-card"
       style={{
-        padding: '60px 50px',
+        padding: 'clamp(1.5rem, 5vw, 3.75rem) clamp(1.5rem, 5vw, 3.125rem)',
         border: '1px solid rgba(201,168,76,.2)',
         transition: 'border-color .4s',
         opacity: visible ? 1 : 0,
         transform: visible ? 'none' : c.dir === 'left' ? 'translateX(-40px)' : 'translateX(40px)',
         transitionProperty: 'opacity, transform, border-color',
         transitionDuration: '.8s, .8s, .4s',
+        borderRadius: '1rem',
+        minHeight: 'auto',
       }}
       onMouseEnter={e => (e.currentTarget as HTMLElement).style.borderColor = 'rgba(201,168,76,.5)'}
       onMouseLeave={e => (e.currentTarget as HTMLElement).style.borderColor = 'rgba(201,168,76,.2)'}
     >
-      <div style={{ fontSize: '3.5rem', marginBottom: 24 }}>{c.icon}</div>
-      <h3 style={{ fontFamily: "'Playfair Display',serif", fontSize: '1.8rem', color: 'var(--cream)', marginBottom: 16 }}>{c.title}</h3>
-      <p style={{ fontSize: 11, color: 'var(--muted)', lineHeight: 1.9, marginBottom: 30 }}>{c.desc}</p>
-      <button className="enquiry-action-btn">{c.btn} →</button>
+      <div style={{ fontSize: 'clamp(2rem, 5vw, 3.5rem)', marginBottom: 'clamp(1rem, 3vw, 1.5rem)' }}>{c.icon}</div>
+      <h3 style={{ fontFamily: "'Playfair Display',serif", fontSize: 'clamp(1.3rem, 4vw, 1.8rem)', color: 'var(--cream)', marginBottom: 'clamp(0.75rem, 2vw, 1rem)' }}>{c.title}</h3>
+      <p style={{ fontSize: 'clamp(0.8rem, 2vw, 11px)', color: 'var(--muted)', lineHeight: 1.9, marginBottom: 'clamp(1.5rem, 4vw, 1.875rem)' }}>{c.desc}</p>
+      <button className="enquiry-action-btn" style={{ width: '100%', maxWidth: '100%' }}>{c.btn} →</button>
     </div>
   )
 }
@@ -48,7 +50,7 @@ export default function Enquiry() {
   const { ref, visible } = useReveal()
 
   return (
-    <section id="enquiry" style={{ padding: '120px 60px', background: 'var(--deep)' }}>
+    <section id="enquiry" style={{ padding: 'clamp(3rem, 8vw, 7.5rem) clamp(1.5rem, 4vw, 3.75rem)', background: 'var(--deep)' }}>
       <div ref={ref} style={{ textAlign: 'center', maxWidth: 500, margin: '0 auto 0', opacity: visible ? 1 : 0, transform: visible ? 'none' : 'translateY(40px)', transition: 'all .8s ease' }}>
         <div className="section-badge" style={{ justifyContent: 'center' }}>Partner with Us</div>
         <h2 style={{ fontFamily: "'Playfair Display',serif", fontSize: 'clamp(2.2rem,4vw,3.8rem)', color: 'var(--cream)' }}>
@@ -56,7 +58,7 @@ export default function Enquiry() {
         </h2>
       </div>
 
-      <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 40, marginTop: 60 }} className="enquiry-grid-resp">
+      <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 'clamp(1.5rem, 5vw, 2.5rem)', marginTop: 'clamp(2rem, 6vw, 3.75rem)' }} className="enquiry-grid-resp">
         {cards.map(c => <EnquiryCard key={c.title} c={c} />)}
       </div>
 
